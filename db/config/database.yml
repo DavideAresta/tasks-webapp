@@ -1,8 +1,9 @@
 database:
-  driver: org.postgresql.Driver
   url: jdbc:postgresql://localhost:5432/project_management
   username: your_username
   password: your_password
+  driver: org.postgresql.Driver
+  driverClassName: org.postgresql.Driver
   maxPoolSize: 10
   minIdle: 2
   idleTimeout: 30000
