@@ -1,15 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import TaskList from './components/TaskList';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header';
+import Routes from './routes';
+import { AuthProvider } from './context/AuthContext';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/tasks" component={TaskList} />
-        <Route path="/" exact component={() => <div>Welcome to the Task Manager</div>} />
-      </Switch>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <ErrorBoundary>
+          <Header />
+          <Routes />
+        </ErrorBoundary>
+      </Router>
+    </AuthProvider>
   );
 };
 
