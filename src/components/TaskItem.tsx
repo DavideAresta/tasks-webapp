@@ -1,16 +1,26 @@
 import React from 'react';
-import { Task } from '../types';
+import styled from 'styled-components';
 
 interface TaskItemProps {
-  task: Task;
+  task: {
+    id: string;
+    title: string;
+    description: string;
+  };
 }
+
+const TaskItemContainer = styled.div`
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+`;
 
 const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   return (
-    <li>
+    <TaskItemContainer>
       <h3>{task.title}</h3>
       <p>{task.description}</p>
-    </li>
+    </TaskItemContainer>
   );
 };
 

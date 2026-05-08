@@ -1,0 +1,6 @@
+database:
+  driver: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/task_management
+  username: db_user
+  password: db_password
+  pool_size: 10
