@@ -1,11 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Task } from '../types';
+import React, { useEffect, useState } from 'react';
 import { fetchTasks } from '../services/taskService';
-import TaskItem from './TaskItem';
+import styled from 'styled-components';
+
+const TaskListContainer = styled.div`
+  padding: 20px;
+`;
+
+const TaskItem = styled.div`
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
 
 const TaskList: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -27,11 +37,11 @@ const TaskList: React.FC = () => {
   if (tasks.length === 0) return <div>No tasks available</div>;
 
   return (
-    <ul>
+    <TaskListContainer>
       {tasks.map(task => (
-        <TaskItem key={task.id} task={task} />
+        <TaskItem key={task.id}>{task.name}</TaskItem>
       ))}
-    </ul>
+    </TaskListContainer>
   );
 };
 
