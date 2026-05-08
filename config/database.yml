@@ -1,0 +1,11 @@
+database:
+  url: jdbc:postgresql://localhost:5432/myapp
+  username: myapp_user
+  password: securepassword
+  driverClassName: org.postgresql.Driver
+  maxPoolSize: 10
+  minIdle: 2
+  idleTimeout: 30000
+  connectionTimeout: 30000
+  validationTimeout: 5000
+  leakDetectionThreshold: 2000
