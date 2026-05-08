@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { Task } from '../types';
 
-export const fetchTasks = async (): Promise<Task[]> => {
+export const fetchTasks = async () => {
   const response = await axios.get('/api/tasks');
   return response.data;
 };
