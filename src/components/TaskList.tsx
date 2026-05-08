@@ -1,5 +1,7 @@
+```tsx
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Task } from '../types';
 import { fetchTasks } from '../services/taskService';
 import TaskItem from './TaskItem';
 
@@ -8,8 +10,8 @@ const TaskListContainer = styled.div`
 `;
 
 const TaskList: React.FC = () => {
-  const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -40,3 +42,4 @@ const TaskList: React.FC = () => {
 };
 
 export default TaskList;
+```
