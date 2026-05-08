@@ -1,0 +1,11 @@
+database:
+  url: jdbc:postgresql://localhost:5432/mydatabase
+  username: myuser
+  password: mypassword
+  driverClassName: org.postgresql.Driver
+  hikari:
+    maximumPoolSize: 10
+    minimumIdle: 2
+    idleTimeout: 30000
+    connectionTimeout: 30000
+    poolName: HikariPool
