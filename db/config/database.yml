@@ -1,8 +1,8 @@
 database:
-  url: jdbc:postgresql://localhost:5432/task_management
-  username: db_user
-  password: db_password
   driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/myapp
+  username: myapp_user
+  password: securepassword
   maxPoolSize: 10
   minIdle: 2
   idleTimeout: 30000
