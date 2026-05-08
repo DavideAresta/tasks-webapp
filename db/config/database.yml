@@ -1,9 +1,10 @@
 database:
+  driverClassName: org.postgresql.Driver
   url: jdbc:postgresql://localhost:5432/myapp
   username: myapp_user
   password: securepassword
-  driverClassName: org.postgresql.Driver
   maxPoolSize: 10
   minIdle: 2
-  maxLifetime: 1800000
+  idleTimeout: 30000
   connectionTimeout: 30000
+  maxLifetime: 1800000
